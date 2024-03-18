@@ -1,11 +1,9 @@
-
-
 #include "helpers.h"
-using namespace std;
+#include <vector>
 
 int main()
 {
-  vector<Region> regions;
+  std::vector<Region> regions;
   readRegions(regions);
   print(regions);
   return 0;
