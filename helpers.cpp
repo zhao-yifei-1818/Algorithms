@@ -2,28 +2,28 @@
 #include <fstream>
 #include <iostream>
 #include <sstream>
-using namespace std;
 
-void readRegions(vector<Region>& regions)
+void readRegions(std::vector<Region>& regions)
 {
-  ifstream file("ZILLOW_REGIONS.csv");
-  string line;
-  while (getline(file, line)) {
-    stringstream ss(line);
-    string id, city, state;
-    getline(ss, id, ',');
-    getline(ss, city, ',');
-    getline(ss, state, ',');
-    regions.push_back({stoi(id), city, state});
+  std::ifstream file("ZILLOW_REGIONS.csv");
+  std::string line;
+  while (std::getline(file, line)) {
+    std::stringstream ss(line);
+    std::string id, city, state;
+    std::getline(ss, id, ',');
+    std::getline(ss, city, ',');
+    std::getline(ss, state, ',');
+    regions.push_back({std::stoi(id), city, state});
   }
   file.close();
 }
 
-void print(vector<Region>& regions)
+void print(const std::vector<Region>& regions)
 {
-  for (int i = 0; i < 5; ++i) {
+  int count = std::min(static_cast<int>(regions.size()), 5);
+  for (int i = 0; i < count; ++i) {
     const Region& region = regions[i];
-    cout << "(" << region.id << ", " << region.city << ", " << region.state
-         << ")" << endl;
+    std::cout << "(" << region.id << ", " << region.city << ", " << region.state
+              << ")" << std::endl;
   }
 }
