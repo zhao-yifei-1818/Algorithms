@@ -19,11 +19,11 @@ void readRegions(vector<Region>& regions)
   file.close();
 }
 
-void print(std::vector<Region>& regions)
+void print(vector<Region>& regions)
 {
   for (int i = 0; i < 5; ++i) {
     const Region& region = regions[i];
-    std::cout << "(" << region.id << ", " << region.city << ", " << region.state
-              << ")" << std::endl;
+    cout << "(" << region.id << ", " << region.city << ", " << region.state
+         << ")" << endl;
   }
 }
