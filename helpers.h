@@ -13,7 +13,7 @@ struct Region {
   {
     return id < other.id;
   }
-};
+}
 
 void readRegions(std::vector<Region>& regions);
 void print(const std::vector<Region>& regions);
