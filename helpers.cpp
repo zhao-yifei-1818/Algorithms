@@ -7,13 +7,12 @@ using namespace std;
 void readRegions(vector<Region>& regions)
 {
   vector<Region> regions;
-  ifstream file(filename);
+  ifstream file("ZILLOW_REGIONS.csv");
   string line;
 
-  if (!file.is_open()) {
-    cerr << "Unable to open file: " << filename << endl;
-    return regions; // Return an empty vector if the file cannot be opened
-  }
+  if (!file.is_open())
+    cout << "Unable to open file: "
+         << endl; // Return an empty vector if the file cannot be opened
 
   while (getline(file, line)) {
     istringstream sstream(line);
@@ -38,7 +37,5 @@ void readRegions(vector<Region>& regions)
     // Add the Region to the vector
     regions.push_back(region);
   }
-
   file.close();
-  return regions;
 }
