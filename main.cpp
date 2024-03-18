@@ -4,12 +4,8 @@
 #include <string>
 #include <vector>
 
+#include "helpers.h"
 using namespace std;
-struct Region {
-  int id;
-  string city;
-  string state;
-};
 
 int main()
 {
@@ -17,29 +13,26 @@ int main()
   string line;
   ifstream file("ZILLOW_REGIONS.csv");
 
-  // Check if the file can be opened
+  // if file opended
   if (file.is_open()) {
     // Read each line from the file
     while (getline(file, line)) {
       stringstream s(line);
       string field;
       Region region;
-
-      // Parse the id
+      // store as integer
       if (getline(s, field, ',')) {
         region.id = stoi(field);
       }
-
-      // Parse the city
+      // city
       if (getline(s, field, ',')) {
         region.city = field;
       }
 
-      // Parse the state
+      // state
       if (getline(s, field)) {
         region.state = field;
       }
-
       // Add the region to the vector
       regions.push_back(region);
     }

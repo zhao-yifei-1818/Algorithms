@@ -1,4 +1,6 @@
-void readRegions(std::vector<Region>& regions)
+
+
+void readRegions(vector<Region>& regions)
 {
   std::ifstream file("ZILLOW_REGIONS.csv");
   std::string line;
@@ -11,4 +13,4 @@ void readRegions(std::vector<Region>& regions)
     regions.push_back({std::stoi(id), city, state});
   }
   file.close();
-}
+};
