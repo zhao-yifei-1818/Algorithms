@@ -1,12 +1,13 @@
 #include "helpers.h"
 #include <fstream>
+#include <iostream>
 #include <sstream>
 using namespace std;
 
 void readRegions(vector<Region>& regions)
 {
   vector<Region> regions;
-  std::ifstream file(filename);
+  ifstream file(filename);
   string line;
 
   if (!file.is_open()) {
