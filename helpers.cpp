@@ -4,11 +4,11 @@
 #include <sstream>
 using namespace std;
 
-void readRegions(std::vector<Region>& regions)
+void readRegions(vector<Region>& regions)
 {
-  std::ifstream file("ZILLOW_REGIONS.csv");
-  std::string line;
-  while (std::getline(file, line)) {
+  ifstream file("ZILLOW_REGIONS.csv");
+  string line;
+  while (getline(file, line)) {
     std::stringstream ss(line);
     std::string id, city, state;
     std::getline(ss, id, ',');
