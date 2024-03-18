@@ -9,9 +9,7 @@ int main()
 {
   vector<Region> regions;
   string line;
-  ifstream file("ZILLOW_REGIONS.csv");
-
-  // if file opended
-
+  readRegions(regions);
+  print(regions);
   return 0;
 }
