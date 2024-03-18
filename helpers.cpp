@@ -5,7 +5,7 @@
 
 void readRegions(std::vector<Region>& regions)
 {
-  std::ifstream file("ZILLOW_REGIONS.csv");
+  std::ifstream file("./ZILLOW_REGIONS.csv");
   std::string line;
   while (std::getline(file, line)) {
     std::stringstream ss(line);
