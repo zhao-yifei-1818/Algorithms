@@ -4,38 +4,17 @@
 #include <sstream>
 using namespace std;
 
-void readRegions(vector<Region>& regions)
+void readRegions(std::vector<Region>& regions)
 {
-  vector<Region> regions;
-  ifstream file("ZILLOW_REGIONS.csv");
-  string line;
-
-  if (!file.is_open())
-    cout << "Unable to open file: "
-         << endl; // Return an empty vector if the file cannot be opened
-
-  while (getline(file, line)) {
-    istringstream sstream(line);
-    string field;
-    Region region;
-
-    // Parse the ID
-    if (getline(sstream, field, ',')) {
-      region.id = stoi(field);
-    }
-
-    // Parse the City
-    if (getline(sstream, field, ',')) {
-      region.city = field;
-    }
-
-    // Parse the State
-    if (getline(sstream, field)) {
-      region.state = field;
-    }
-
-    // Add the Region to the vector
-    regions.push_back(region);
+  std::ifstream file("ZILLOW_REGIONS.csv");
+  std::string line;
+  while (std::getline(file, line)) {
+    std::stringstream ss(line);
+    std::string id, city, state;
+    std::getline(ss, id, ',');
+    std::getline(ss, city, ',');
+    std::getline(ss, state, ',');
+    regions.push_back({std::stoi(id), city, state});
   }
   file.close();
 }
