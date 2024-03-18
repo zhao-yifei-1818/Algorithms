@@ -9,12 +9,12 @@ void readRegions(vector<Region>& regions)
   ifstream file("ZILLOW_REGIONS.csv");
   string line;
   while (getline(file, line)) {
-    std::stringstream ss(line);
-    std::string id, city, state;
-    std::getline(ss, id, ',');
-    std::getline(ss, city, ',');
-    std::getline(ss, state, ',');
-    regions.push_back({std::stoi(id), city, state});
+    stringstream ss(line);
+    string id, city, state;
+    getline(ss, id, ',');
+    getline(ss, city, ',');
+    getline(ss, state, ',');
+    regions.push_back({stoi(id), city, state});
   }
   file.close();
 }
