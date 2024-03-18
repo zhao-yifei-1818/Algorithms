@@ -1,4 +1,5 @@
 #include "helpers.h"
+using namespace std;
 
 void readRegions(vector<Region>& regions)
 {
